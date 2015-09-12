@@ -3,14 +3,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Inventory</groupId>
-    <artifactId>Inc</artifactId>
+    <groupId>InventoryV2</groupId>
+    <artifactId>Inco</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Inc</name>
+    <name>Inco</name>
 
     <build>
-        <finalName>Inc</finalName>
+        <finalName>Inco</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -84,11 +84,17 @@
             <type>jar</type>
         </dependency>
         
-        <dependency>
+        <!--        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc14</artifactId>
             <version>11.2.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
         </dependency>
+
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>

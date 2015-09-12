@@ -10,6 +10,7 @@ import com.inventory.ejb.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Local;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.PrePersist;
 import org.hibernate.Criteria;
@@ -20,9 +21,8 @@ import org.hibernate.Session;
  * @author A7mady
  */
 @Stateless
-@Local(MySessionBeanLocal.class)
-public class MySessionBean implements MySessionBeanLocal {
-    @Override
+@LocalBean
+public class MySessionBean   {
     public List<Product> getAllProducts() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria productCriteria = session.createCriteria(Product.class, "product");
@@ -36,7 +36,6 @@ public class MySessionBean implements MySessionBeanLocal {
     }
     
     
-    @Override
     public String say(String word){
         return word;
     }

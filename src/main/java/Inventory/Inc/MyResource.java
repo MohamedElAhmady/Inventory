@@ -1,6 +1,6 @@
 package Inventory.Inc;
 
-import com.inventory.ejb.MySessionBeanLocal;
+import com.inventory.ejb.MySessionBean;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,11 +22,13 @@ import javax.ws.rs.core.Response;
 /**
  * Root resource (exposed at "myresource" path)
  */
+@Stateless
+@LocalBean
 @Path("myresource")
-@RequestScoped
+//@RequestScoped
 public class MyResource {
     @Inject
-    private MySessionBeanLocal bean;
+    private MySessionBean bean;
     /**
      * Method handling HTTP GET requests. The returned object will be sent
      * to the client as "text/plain" media type.
