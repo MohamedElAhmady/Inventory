@@ -2,6 +2,7 @@ package Inventory.Inc;
 // Generated Sep 11, 2015 11:47:32 PM by Hibernate Tools 4.3.1
 
 
+import com.google.gson.annotations.Expose;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class Product  implements java.io.Serializable {
      private Integer productId;
      private String name;
      private Double price;
-     private Set stockedProducts = new HashSet(0);
+     private transient Set stockedProducts = new HashSet(0);
 
     public Product() {
     }

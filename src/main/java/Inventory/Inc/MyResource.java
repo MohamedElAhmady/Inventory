@@ -1,5 +1,6 @@
 package Inventory.Inc;
 
+import com.google.gson.Gson;
 import com.inventory.ejb.MySessionBean;
 import java.util.List;
 import java.util.logging.Level;
@@ -43,10 +44,10 @@ public class MyResource {
     }
     @GET
     @Path("inventory")
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response getAllProducts() {
-        bean.getAllProducts();
-       return Response.status(200).entity("hello").build();
-
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getAllProducts() {
+        Gson gson = new Gson();
+//       return Response.status(200).entity("hello").build();
+        return gson.toJson(bean.getAllProducts());
     }
 }
